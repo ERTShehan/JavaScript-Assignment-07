@@ -1,0 +1,97 @@
+body{
+    background-color:rgb(18, 40, 50);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#main-container{
+    width: 65%;
+    min-height: 100px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+}
+
+#middle-container{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+#end-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#btn-container{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#middle-container div{
+    margin-right: 20px;
+}
+
+.box{
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+button{
+    padding: 15px 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+#btn-start{
+    background-color: green;
+}
+
+#btn-stop{
+    background-color: red;
+}
+
+button:hover{
+ cursor: pointer;
+}
+
+.box-1{
+    background-color: red;
+}
+
+.box-2{
+    background-color: green;
+}
+
+.box-3{
+    background-color: blue;
+}
+
+.box-4{
+    background-color: yellow;
+}
+
+.box-5{
+    background-color: pink;
+}
+
+.box-6{
+    background-color: hotpink;
+}
