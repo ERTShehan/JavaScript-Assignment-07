@@ -1,30 +1,37 @@
-let interval;
-let sound = document.getElementById("knightSound");
-
-function startAnimation() {
-    let boxes = $(".box");
+document.addEventListener("DOMContentLoaded", function () {
+    let lights = document.querySelectorAll(".box");
     let index = 0;
     let direction = 1;
-    interval = setInterval(() => {
-        // boxes.css("background-color", "rgb(50, 0, 0)");
-        boxes.eq(index).css("background-color", "red");
-        boxes.eq(index).fadeTo(200, 2, function () {
-            $(this).fadeTo(200, 0);
+    let interval;
+    let sound = document.getElementById("knightSound");
+
+    function animateLights() {
+        lights.forEach(box => {
+            box.style.backgroundColor = "white";
         });
+
+        lights[index].style.backgroundColor = "red";
+
         index += direction;
-        if (index === boxes.length - 1 || index === 0) {
+        if (index === lights.length - 1 || index === 0) {
             direction *= -1;
         }
-    }, 250);
-        sound.play();
-}
-     
-function stopAnimation() {
-    clearInterval(interval);
-    // $(".box").css("background-color", "rgb(50, 0, 0)");
-    sound.pause();
-    sound.currentTime = 0;
-}
+    }
 
-$("#start").click(startAnimation);
-$("#stop").click(stopAnimation);
+    document.getElementById("start").addEventListener("click", function () {
+        if (!interval) {
+            interval = setInterval(animateLights, 150);
+            sound.play();
+        }
+    });
+
+    document.getElementById("stop").addEventListener("click", function () {
+        clearInterval(interval);
+        interval = null;
+        lights.forEach(box => {
+            box.style.backgroundColor = "white";
+        });
+        sound.pause();
+        sound.currentTime = 0;
+    });
+});
